@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produks",
+  "info": {
+    "singularName": "produk",
+    "pluralName": "produks",
+    "displayName": "produk",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "kode_barang": {
+      "type": "string"
+    },
+    "nama": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "richtext"
+    },
+    "harga": {
+      "type": "biginteger"
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "kategori": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::kategori.kategori",
+      "inversedBy": "produks"
+    },
+    "agen": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::agen.agen",
+      "inversedBy": "produks"
+    }
+  }
+}
